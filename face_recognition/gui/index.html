@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script type="text/javascript" src="/eel.js"></script>  
+    <title>Face Recognition</title>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <!-- Page 1: Face Recognition -->
+        <div id="page1" class="page" style="display: block;">
+            <h1>Face Recognition</h1>
+            <div class="box">
+                <a onclick="showPage('page2')" class="box-btn">Upload Image</a>
+                <a onclick="faceRecognition()" class="box-btn">Use Face Recognition</a>
+            </div>
+        </div>
+
+        <!-- Page 2: Upload Image -->
+        <div id="page2" class="page" style="display: none;">
+            <h1 onclick="showPage('page1')">Upload Image</h1>
+            <div class="box">
+                <a onclick="showPage('page1')" class="back-btn"><i data-feather="arrow-left"></i></a>
+                <a onclick="showPopup()" class="box-btn">Upload Image</a>
+
+                <div id="popup" class="popup-container">
+                    <div class="popup">
+                        <input type="file" id="imageInput" />
+                        <input type="text" id="imageName" placeholder="Enter image name" />
+                        <button onclick="uploadImage()">Upload</button>
+                    </div>
+
+                </div>
+
+
+                <a onclick="showPage('page3')" class="box-btn">Image Data</a>
+            </div>
+        </div>
+
+        <!-- Page 3: Image Data -->
+        <div id="page3" class="page" style="display: none;">
+            <h1 onclick="showPage('page2')">Image Data</h1>
+            <div class="box">
+                <a onclick="showPage('page2')" class="back-btn"><i data-feather="arrow-left"></i></a>
+                <a onclick="showImages()" class="box-btn">Show Image Data</a>
+                <div id="imageList" class="image-list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        feather.replace();
+    </script>
+
+    <script src="scipt.js"></script>
+
+</body>
+</html>
