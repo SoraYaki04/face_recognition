@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+        <script type="text/javascript" src="eel.js"></script>  
+    <title>Face Recognition</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div id="page5" class="page" style="display: none;">
+            <h1 onclick="showPage('page2')">Profil</h1>
+            <div class="box box-profil">
+                <p><strong>USERNAME </strong> <br> <span id="profileUsername">Loading...</span></p>
+                <button onclick="logout()">Logout</button>        
+            </div>
+        </div>
+
+        <!-- REGISTER -->
+        <div id="page0" class="page" style="display: none;">
+            <h1>Face Recognition</h1>
+            <div class="box-login-register">
+                <div class="header">
+                    <h1>Register</h1>
+                </div>
+                <div class="container-login-register">
+                    <div class="content">
+                        <input type="text" id="registerUsername" placeholder="Masukan Username">
+                        <input type="password" id="registerPassword" placeholder="Masukan Password">
+                        <button onclick="register()">Register</button>
+                        <p>Sudah punya akun?  <a onclick="showPage('page1')">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- LOGIN -->
+        <div id="page1" class="page" style="display: block;">
+            <h1>Face Recognition</h1>
+            <div class="box-login-register">
+                <div class="header">
+                    <h1>Login</h1>
+                </div>
+                
+                <div class="container-login-register">
+                    <div class="content">
+                        <input type="text" id="username" placeholder="Masukan Username">
+                        <input type="password" id="password" placeholder="Masukan Password">
+                        <button onclick="login()">Login</button>
+                        <p>Belum punya akun? <a onclick="showPage('page0')">Register</a></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="page2" class="page" style="display: none;">
+            <h1>Face Recognition</h1>
+            <div class="box">
+                <a onclick="showPage('page5')"><img src="user.svg" alt=""></a>
+                <a onclick="showPage('page3')" class="box-btn">Image</a>
+                <a onclick="faceRecognition()" class="box-btn">Use Face Recognition</a>
+            </div>
+        </div>
+
+        <!-- Page 2: Upload Image -->
+        <div id="page3" class="page" style="display: none;">
+            <h1 onclick="showPage('page2')">Upload Image</h1>
+            <div class="box">
+                <a onclick="showPage('page5')"><img src="user.svg" alt=""></a>
+
+                <a onclick="showPopup()" class="box-btn">Upload Image</a>
+
+                <div id="popup" class="popup-container">
+                    <div class="popup">
+                        <input type="file" id="imageInput" title="Harap masukan gambar wajah degnan format jpg"/>
+                        <input type="text" id="imageNama" placeholder="Masukan Nama" />
+                        <input type="text" id="imageAlamat" placeholder="Masukan Alamar" />
+                        <input type="date" id="imageTanggal" placeholder="Masukan Tanggal Lahir" />
+                        <button onclick="uploadImage()">Upload</button>
+                    </div>
+                </div>
+
+
+                <a onclick="showPage('page4')" class="box-btn">Image Data</a>
+            </div>
+        </div>
+
+        <!-- Page 3: Image Data -->
+        <div id="page4" class="page" style="display: none;">
+            <h1 onclick="showPage('page3')">Image Data</h1>
+            <div class="box">
+                <div class="header header-search">
+                    <input type="text" id="searchInput" placeholder="Cari Wajah..." oninput="searchImages()">
+                    <button onclick="exportImages()" title="Klik bila gambar belum muncul">Export Gambar</button>
+                </div>
+                <div class="container-images">
+                    <div class="overflow-images">
+                        <div id="imageList" class="image-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        feather.replace();
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

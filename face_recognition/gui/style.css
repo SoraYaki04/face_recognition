@@ -1,0 +1,236 @@
+html, body {
+    overflow: hidden; /* Prevents scrolling */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 46%, rgba(0,204,250,1) 89%);
+}
+
+.container h1 {
+    text-align: center;
+    font-family: cursive;
+    color: rgb(194, 186, 186);
+    cursor: pointer;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    background: rgb(2,0,36);
+    width: 500px;
+    min-height: 380px
+}
+
+.box-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: rgb(18,16,54);
+    cursor: pointer;
+    height: 100px;
+    width: 400px;
+    margin: 20px;
+    border-radius: 15px;
+    font-size: 30px;
+    font-family: cursive;
+    color: white;
+}
+
+.box-btn:hover {
+    transition:.5s;
+    background: rgb(6,0,120);
+    background: linear-gradient(90deg, rgba(6,0,120,1) 24%, rgba(50,164,190,1) 100%);
+}
+
+.back-btn {
+    position: absolute;
+    top: 130px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* POPUP UPLOAD */
+
+.popup-container {
+    display: none;
+    position: fixed;
+    padding: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 15px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    height: 120px;
+    width: 350px;
+    background: rgb(18,18,41);
+    background: radial-gradient(circle, rgba(18,18,41,1) 100%, rgba(5,6,29,1) 100%);
+    /* background: rgb(3,3,33);
+    background: radial-gradient(circle, rgba(3,3,33,1) 100%, rgba(5,6,29,1) 100%); */
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    color: white;
+}
+
+.popup input, .box-login-register input {
+    height: 20px;
+    margin: 10px;
+}
+
+.popup button {
+    cursor: pointer;
+    width: 70px;
+    height: 30px;
+}
+
+.image-list {
+    height: 350px;
+    width: 490px;
+    border-radius:10px ;
+}
+
+.box-login-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    background: rgb(2,0,36);
+    width: 400px;
+    height: 90%;
+}
+
+.container-login-register {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.content input {
+    color: white;
+    background: rgb(3, 1, 32);
+    box-shadow: 0 px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.content input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(1, 13, 37, 0.87);
+}
+
+.content button {
+    background: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    height: 28px;
+    width: 50%;
+}
+
+.container-login-register p {
+    color: white;
+    margin-top: 15px;
+}
+
+.container-login-register a { 
+    cursor: pointer;
+    color: rgba(0,204,250,1);
+    text-decoration: underline;
+}
+
+.container-login-register button {
+    cursor: pointer;
+}
+
+.box-profil p {
+    color: white;
+}
+
+
+.box-profil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container-images {
+    display: flex;
+    justify-content: center;
+    background: rgb(18,16,54);
+    color: white;
+    min-height: 100px;
+}
+
+.overflow-images {
+    display: flex;
+    justify-content: center;
+    position: relative; /* Membuat elemen kontainer menjadi relatif agar kita bisa menggunakan position pada elemen lainnya */
+    overflow-x: auto;   /* Menambahkan scroll horizontal jika gambar banyak */
+    padding: 10px;       /* Padding di dalam box */
+    height: 100%;
+}
+
+.header-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;    /* Menempelkan header di atas ketika scroll */
+    top: 0;              /* Membuat header tetap di posisi atas */
+    padding: 10px;       /* Padding di dalam header */  
+    z-index: 10;         /* Menjamin header tetap di atas elemen lainnya */
+}
+
+.header-search button {
+    width: 30%;
+}
+
+.overflow-images::-webkit-scrollbar {
+    display: none;              /* Chrome, Safari */
+}
+
+.container-images img {
+    margin: 5px;
+    display: inline-block;
+}
+
+img {
+    cursor: pointer;
+}
+
